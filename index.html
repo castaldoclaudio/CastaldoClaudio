@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Claudio Castaldo - Sito Completo</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Arial, sans-serif; background:#f0f4ff; color:#333; }
+nav { background:#004aad; padding:15px; display:flex; justify-content:center; flex-wrap:wrap; }
+nav a { color:white; margin:5px 15px; text-decoration:none; font-weight:bold; transition:0.3s; }
+nav a:hover { color:#ffe600; }
+header { text-align:center; padding:80px 20px; background:linear-gradient(to right,#cfe0ff,#a3c1ff);}
+header h1 { font-size:2.5em; margin-bottom:10px; }
+header p { font-size:1.2em; height:30px; }
+.btn { display:inline-block; padding:12px 25px; background:linear-gradient(90deg,#004aad,#0066ff); color:white; border-radius:5px; text-decoration:none; margin-top:20px; transition:0.3s; }
+.btn:hover { transform:scale(1.1);}
+section { max-width:1000px; margin:40px auto; padding:20px; background:white; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+.progetti { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+.progetto { background:#e0e7ff; padding:15px; border-radius:8px; text-align:center; transition:0.5s; }
+.progetto:hover { transform:scale(1.05) rotate(-1deg); box-shadow:0 5px 20px rgba(0,0,0,0.3);}
+.progetto img { max-width:100%; border-radius:5px; margin-bottom:10px; transition:0.5s; }
+.progetto img:hover { transform:scale(1.05);}
+.progetto h3 { color:#004aad; margin-bottom:10px; }
+input, textarea { width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:5px; transition:0.3s; }
+input:focus, textarea:focus { border-color:#004aad; box-shadow:0 0 5px rgba(0,74,173,0.5);}
+button { background:linear-gradient(90deg,#004aad,#0066ff); color:white; padding:12px 20px; border:none; border-radius:5px; cursor:pointer; transition:0.3s; }
+button:hover { transform:scale(1.05);}
+footer { background:#004aad; color:white; text-align:center; padding:20px; margin-top:40px; }
+footer a { color:white; margin:0 10px; text-decoration:none; font-size:1.2em; transition:0.3s; }
+footer a:hover { color:#ffe600; transform:scale(1.2);}
+@media(max-width:600px){ nav{flex-direction:column;} nav a{margin:5px 0;} header h1{font-size:2em;}}
+
+/* Typing effect */
+#typed-text { border-right:2px solid #004aad; display:inline; white-space:nowrap; overflow:hidden; }
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contatti">Contatti</a>
+</nav>
+
+<header id="home">
+<h1>Claudio Castaldo</h1>
+<p><span id="typed-text"></span></p>
+<a href="#portfolio" class="btn">Vedi i miei progetti</a>
+</header>
+
+<section id="portfolio">
+<h2>Portfolio</h2>
+<div class="progetti">
+<div class="progetto">
+<img src="https://via.placeholder.com/300x200" alt="Progetto 1">
+<h3>Progetto 1</h3>
+<p>Applicazione web per gestione dati aziendali.</p>
+</div>
+<div class="progetto">
+<img src="https://via.placeholder.com/300x200" alt="Progetto 2">
+<h3>Progetto 2</h3>
+<p>Sistema di monitoraggio sicurezza rete.</p>
+</div>
+<div class="progetto">
+<img src="https://via.placeholder.com/300x200" alt="Progetto 3">
+<h3>Progetto 3</h3>
+<p>Sito web responsive e interattivo per cliente.</p>
+</div>
+</div>
+</section>
+
+<section id="contatti">
+<h2>Contatti</h2>
+<form>
+<label>Nome:</label>
+<input type="text" name="nome" placeholder="Il tuo nome">
+<label>Email:</label>
+<input type="email" name="email" placeholder="La tua email">
+<label>Messaggio:</label>
+<textarea name="messaggio" rows="5" placeholder="Scrivi qui il tuo messaggio"></textarea>
+<button type="submit">Invia</button>
+</form>
+</section>
+
+<footer>
+Seguimi sui social: 
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+</footer>
+
+<script>
+// Typing effect
+const text = "Laureato in Ingegneria Informatica | Nato a San Paolo Bel Sito (NA)";
+const typedText = document.getElementById("typed-text");
+let i = 0;
+function type() {
+    if(i < text.length) {
+        typedText.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type,50);
+    }
+}
+window.onload = type;
+</script>
+
+</body>
+</html>
